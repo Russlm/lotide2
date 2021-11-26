@@ -1,24 +1,26 @@
 const eqArrays = function(arrayOne, arrayTwo) {
   //accumulator
-  let output = false;
-  //twin for loops to compare
-  for (let components of arrayOne) {
-    for (let files of arrayTwo) {
-      if (components === files) {
-        output = true;
-      } else {
-        output = false;
-      }
-    }
+  //assume that they are the same. 
+  if (arrayOne.length !== arrayTwo.length) { //if array lengths are different, then they cant be the same.
+    return false;
   }
-  return output
+  //twin for loops to compare
+  for (i = 0; i < arrayOne.length; i ++) { //checking first array.
+    // console.log("components:" , components)
+    //   console.log(`file: ${files}`)
+      if (arrayOne[i] !== arrayTwo[i]) {
+        return false;
+      }
+    
+  }
+  return true; 
 };
 
-eqArrays([1, 2, 3], [1, 2, 3]); // => true
-eqArrays([1, 2, 3], [3, 2, 1]); // => false
+console.log(eqArrays([1, 2, 3], [1, 2, 3])); // => true
+console.log(eqArrays([1, 2, 3], [3, 2, 1])); // => false
 
-eqArrays(["1", "2", "3"], ["1", "2", "3"]); // => true
-eqArrays(["1", "2", "3"], ["1", "2", 3]); // => false
+console.log(eqArrays(["1", "2", "3"], ["1", "2", "3"])); // => true
+console.log(eqArrays(["1", "2", "3"], ["1", "2", 3])); // => false
 
 
 

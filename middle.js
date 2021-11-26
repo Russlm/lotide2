@@ -15,18 +15,20 @@ const assertEqual = function(actual, expected) {
 //EQ ARRAY
 const eqArrays = function(arrayOne, arrayTwo) {
   //accumulator
-  let output = false;
-  //twin for loops to compare
-  for (let components of arrayOne) {
-    for (let files of arrayTwo) {
-      if (components === files) {
-        output = true;
-      } else {
-        output = false;
-      }
-    }
+  //assume that they are the same. 
+  if (arrayOne.length !== arrayTwo.length) { //if array lengths are different, then they cant be the same.
+    return false;
   }
-  return output
+  //twin for loops to compare
+  for (i = 0; i < arrayOne.length; i ++) { //checking first array.
+    // console.log("components:" , components)
+    //   console.log(`file: ${files}`)
+      if (arrayOne[i] !== arrayTwo[i]) {
+        return false;
+      }
+    
+  }
+  return true; 
 };
 
 const assertArraysEqual = function(arrayOne, arrayTwo) {
@@ -46,21 +48,21 @@ const assertArraysEqual = function(arrayOne, arrayTwo) {
 const middle = function (inputArray) {
   let input = inputArray;
   let numOfElements = input.length;
+  let middleElement = Math.ceil(numOfElements/2) - 1
   let output = [];
+
   if (numOfElements < 3) {
-    console.log('lower than 2 elements:', output )
+    console.log('lower than 2 elements:', output)
     return output;
   }
   if (numOfElements % 2 === 0) {
-    output = [];
-    output.push(input[numOfElements/2 - 1]);
-    output.push(input[numOfElements/2]);
+    output.push(input[middleElement]);
+    output.push(input[middleElement + 1]);
     console.log(`even amount of elements: ${output}`)
     return output;
   } 
   output = []
-  // numOfElements = Math.ceil(numOfElements/2) - 1
-  output.push(input[Math.ceil(numOfElements/2) - 1]);
+  output.push(input[middleElement]);
   console.log(`odd amount of elements: ${output}`)
   return output; 
 }
@@ -68,3 +70,4 @@ assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3,4]);
 assertArraysEqual(middle([1]),[]);
 assertArraysEqual(middle([2,4]), []);
 assertArraysEqual(middle([1, 2, 3, 4, 5, 6, 7]), [4]);
+assertArraysEqual([],[])

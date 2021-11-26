@@ -1,3 +1,5 @@
+//HELPER FUNCTIONS 
+
 //EQ ARRAY
 const eqArrays = function(arrayOne, arrayTwo) {
   //accumulator
@@ -26,3 +28,22 @@ const assertArraysEqual = function(arrayOne, arrayTwo) {
     console.log(`❌❌❌ Assertion failed: ${arrayOne} !== ${arrayTwo}`);
   }
 };
+
+// ACTUAL FUNCTION 
+
+
+
+const words = ["ground", "control", "to", "major", "tom"];
+
+const map = function(array, callback) {
+  const results = [];
+  for (let item of array) {
+    results.push(callback(item))
+  }
+  return results;
+}
+const result1 = map(words, word => word[0]);
+console.log(result1);
+
+//this code was step by step handheld by activity 331 on lhoouse 
+// very insightful in how the map function works if you make it yourself! :)
