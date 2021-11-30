@@ -1,3 +1,4 @@
+// HELPER FUNCTIONS 
 //HELPER FUNCTIONS 
 
 //EQ ARRAY
@@ -33,19 +34,28 @@ const assertArraysEqual = function(arrayOne, arrayTwo) {
 
 // ACTUAL FUNCTION 
 
-
-
-const words = ["ground", "control", "to", "major", "tom"];
-
-const map = function(array, callback) {
+const takeUntil = function(array, callback) {
   const results = [];
-  for (let item of array) {
-    results.push(callback(item))
+  for (let element of array) {
+    if (callback(element)) { 
+      return results; 
+    } else {
+      results.push(element);
+    }
   }
-  return results;
+  console.log(results)
 }
-const result1 = map(words, word => word[0]);
-console.log(result1);
 
-//this code was step by step handheld by activity 331 on lhoouse 
-// very insightful in how the map function works if you make it yourself! :)
+const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+const results1 = takeUntil(data1, x => x < 0);
+console.log(results1);
+
+console.log('---');
+
+const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
+const results2 = takeUntil(data2, x => x === ',');
+console.log(results2);
+
+
+assertArraysEqual(results1,  [ 1, 2, 5, 7, 2 ])
+assertArraysEqual(results2, [ "I've", "been", "to", "Hollywood" ])

@@ -1,5 +1,4 @@
-// const { mode } = require("../../w1-test/answers/03");
-
+// HELPER FUNCTION
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
@@ -9,4 +8,8 @@ const assertEqual = function(actual, expected) {
   
 };
 
-module.exports = assertEqual;
+// MAIN FUNCTION 
+
+const findKey = function (object, callback) { 
+  
+}
