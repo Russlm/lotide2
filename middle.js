@@ -28,10 +28,6 @@ const middle = function (inputArray) {
   console.log(`odd amount of elements: ${output}`)
   return output; 
 }
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3,4]);
-assertArraysEqual(middle([1]),[]);
-assertArraysEqual(middle([2,4]), []);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6, 7]), [4]);
-assertArraysEqual([],[])
+
 
 module.exports = middle;
