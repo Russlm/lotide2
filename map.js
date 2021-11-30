@@ -47,5 +47,3 @@ const map = function(array, callback) {
 const result1 = map(words, word => word[0]);
 console.log(result1);
 
-//this code was step by step handheld by activity 331 on lhoouse 
-// very insightful in how the map function works if you make it yourself! :)
