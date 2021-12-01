@@ -2,20 +2,20 @@ const assertEqual = require('./assertEqual');
 
 const eqArrays = function(arrayOne, arrayTwo) {
   //accumulator
-  //assume that they are the same. 
+  //assume that they are the same.
   if (arrayOne.length !== arrayTwo.length) { //if array lengths are different, then they cant be the same.
     return false;
   }
   //twin for loops to compare
-  for (i = 0; i < arrayOne.length; i ++) { //checking first array.
+  for (let i = 0; i < arrayOne.length; i ++) { //checking first array.
     // console.log("components:" , components)
     //   console.log(`file: ${files}`)
-      if (arrayOne[i] !== arrayTwo[i]) {
-        return false;
-      }
+    if (arrayOne[i] !== arrayTwo[i]) {
+      return false;
+    }
     
   }
-  return true; 
+  return true;
 };
 
 module.exports = eqArrays;

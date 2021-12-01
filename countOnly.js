@@ -21,7 +21,7 @@ const assertEqual = function(actual, expected) {
 //       console.log(`key value pair being compared: ${target}: ${itemsToCount[target]}`);
 //       if (itemsToCount[target] === true && item === target){
 //         output[item] ++;
-//         console.log(`current output: ${output}`);  
+//         console.log(`current output: ${output}`);
 //       }
 //     }
 //   }
@@ -32,16 +32,16 @@ const countOnly = function(allItems, itemsToCount) {  //all items = array, items
   let output = {};
   for (let item of allItems) {
     if (itemsToCount[item]) {
-      if(output[item]) {
+      if (output[item]) {
         output[item] += 1;
       } else {
-        output[item]= 1;
+        output[item] = 1;
       }
     }
     
   }
-  return(output)
-}
+  return (output);
+};
 
 
 const firstNames = [
@@ -61,4 +61,4 @@ const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": t
 assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
-assertEqual(result1["Agouhanna"], undefined)
+assertEqual(result1["Agouhanna"], undefined);

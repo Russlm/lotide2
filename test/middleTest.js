@@ -22,9 +22,9 @@ describe("#middle", () => {
     assert.deepEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
   });
   it("returns hello for [Hello, Lighthouse, Labs]", () => {
-    assert.deepEqual(middle(["Hello", "Lighthouse", "Labs"]), ["Lighthouse"]); 
+    assert.deepEqual(middle(["Hello", "Lighthouse", "Labs"]), ["Lighthouse"]);
   });
   // it("returns [] for [1]", () => {
-  //   assert.strictEqual(middle([1]), []); 
+  //   assert.strictEqual(middle([1]), []);
   // });
 });

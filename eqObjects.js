@@ -1,11 +1,11 @@
-// HELPER FUNCTIONS 
-const assertEqual = function(actual, expected ){
-  if (actual === expected){
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
+// HELPER FUNCTIONS
+const assertEqual = function(actual, expected) {
+  if (actual === expected) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
-    console.log(`❌❌❌ Assertion failed: ${actual} !== ${expected}`)
+    console.log(`❌❌❌ Assertion failed: ${actual} !== ${expected}`);
   }
-  };
+};
 
 const eqArrays = function(arrayOne, arrayTwo) {
   //accumulator
@@ -20,10 +20,10 @@ const eqArrays = function(arrayOne, arrayTwo) {
       }
     }
   }
-  return output
+  return output;
 };
 
-// ACTUAL CODE 
+// ACTUAL CODE
 
 const eqObjects = function(object1, object2) {
   //accumulator
@@ -33,27 +33,27 @@ const eqObjects = function(object1, object2) {
     //console.log('current objectOne key being tested:', keys1)
     for (let keys2 in object2) {
       //console.log('current objectTwo key being tested:', keys2)
-      //check and see if keys match 
+      //check and see if keys match
       if (keys1 === keys2) {
         //check and see if either value is an array.
-        //console.log('both keys match.', keys1, keys2) 
+        //console.log('both keys match.', keys1, keys2)
         if (Array.isArray(object1[keys1]) || Array.isArray(object2[keys2])) {
-          //test arrays. 
-          if (eqArrays(object1[keys1], object2[keys2])){
+          //test arrays.
+          if (eqArrays(object1[keys1], object2[keys2])) {
             output = true;
             //console.log('both arrays match', output)
             break;
           } else {
-            output = false 
+            output = false;
             //console.log('both arrays dont match', output)
           }
         } else if (object1[keys1] === object2[keys2]) {
-              output = true;
-              break;
-            } else {
-              output = false;
-              break;
-            }
+          output = true;
+          break;
+        } else {
+          output = false;
+          break;
+        }
       } else {
         output = false;
       }
@@ -61,10 +61,10 @@ const eqObjects = function(object1, object2) {
     }
   }
   //console.log(output)
-  return output
+  return output;
 };
 
-// TEST CODE 
+// TEST CODE
 
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
@@ -72,9 +72,9 @@ console.log(assertEqual(eqObjects(ab, ba),true));
 
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
-; // => true
+// => true
 console.log(assertEqual(eqObjects(cd, dc),true));
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
-console.log("test 3 results")
+console.log("test 3 results");
 console.log(assertEqual(eqObjects(cd, cd2),false));// => false

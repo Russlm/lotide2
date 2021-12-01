@@ -8,8 +8,8 @@ const assertEqual = function(actual, expected) {
   
 };
 
-// MAIN FUNCTION 
+// MAIN FUNCTION
 
-const findKey = function (object, callback) { 
+const findKey = function(object, callback) {
   
-}
+};

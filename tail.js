@@ -1,5 +1,5 @@
 //HELPER FUNCTIONS
-const assertEqual = require("./assertEqual")
+const assertEqual = require("./assertEqual");
 
 //TAIL FN
 const tail = function(array) {

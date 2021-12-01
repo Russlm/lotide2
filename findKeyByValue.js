@@ -1,32 +1,32 @@
-//TEST FUNCTION 
-const assertEqual = function(actual, expected ){
-  if (actual === expected){
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
+//TEST FUNCTION
+const assertEqual = function(actual, expected) {
+  if (actual === expected) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
-    console.log(`❌❌❌ Assertion failed: ${actual} !== ${expected}`)
+    console.log(`❌❌❌ Assertion failed: ${actual} !== ${expected}`);
   }
-  };
+};
 
-//ACTUAL CODE 
-const findKeyByValue = function(testedObject, queriedString){
+//ACTUAL CODE
+const findKeyByValue = function(testedObject, queriedString) {
   //accum
-  output = ''
+  let output = '';
 
-  //search function 
-  for (keys in testedObject){
-    if (testedObject[keys] === queriedString){
+  //search function
+  for (let keys in testedObject) {
+    if (testedObject[keys] === queriedString) {
       output = `${keys}`;
       break;
     }
   }
-  return output
-} 
+  return output;
+};
 
 
-//TEST CODE 
+//TEST CODE
 
-const bestTVShowsByGenre = { 
-  sci_fi: "The Expanse",
+const bestTVShowsByGenre = {
+  sciFi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire",
   musical: "Hamilton",

@@ -7,7 +7,7 @@ describe("#head", () => {
     assert.deepEqual(head([7, 6, 5]), 7);
   });
   it("returns hello for [Hello, Lighthouse, Labs]", () => {
-    assert.deepEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello"); 
+    assert.deepEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
   });
 });
 
